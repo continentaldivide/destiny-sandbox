@@ -18,14 +18,14 @@ const App = () => {
   )
     .then((response) => response.json())
     .then((result) => {
-      setText(result.Response.data.inventoryItem.itemName);
+      setText(result.Response.data.inventoryItem.icon);
     })
     .catch((error) => console.log("error", error));
 
   return (
     <div>
       <p>hello world</p>
-      <p>{text}</p>
+      <img src={"https://www.bungie.net" + text} />
     </div>
   );
 };
