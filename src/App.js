@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const App = () => {
   const apiKey = process.env.REACT_APP_DESTINY_API_KEY;
-  const [text, setText] = React.useState("");
+  const [item, setItem] = React.useState("");
   const myHeaders = new Headers();
   myHeaders.append("X-API-Key", apiKey);
 
@@ -12,20 +12,22 @@ const App = () => {
     redirect: "follow",
   };
 
-  fetch(
-    "https://www.bungie.net/platform/Destiny/Manifest/InventoryItem/1274330687/",
-    requestOptions
-  )
-    .then((response) => response.json())
-    .then((result) => {
-      setText(result.Response.data.inventoryItem.icon);
-    })
-    .catch((error) => console.log("error", error));
+  useEffect(() => {
+    fetch(
+      "https://www.bungie.net/platform/Destiny/Manifest/InventoryItem/1274330687/",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        setItem(result.Response.data.inventoryItem);
+      })
+      .catch((error) => console.log("error", error));
+  }, []);
 
   return (
     <div>
       <p>hello world</p>
-      <img src={"https://www.bungie.net" + text} />
+      <img src={"https://www.bungie.net" + item.icon} />
     </div>
   );
 };
