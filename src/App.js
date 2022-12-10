@@ -3,7 +3,8 @@ import React, { useEffect } from "react";
 const App = () => {
   const apiKey = process.env.REACT_APP_DESTINY_API_KEY;
   const [item, setItem] = React.useState("");
-  const [player, setPlayer] = React.useState({});
+  const playerArray = [];
+  const [fetchedPlayer, setFetchedPlayer] = React.useState({});
   const myHeaders = new Headers();
   myHeaders.append("X-API-Key", apiKey);
 
@@ -30,8 +31,8 @@ const App = () => {
         requestOptions
       );
       const playerJson = await playerData.json();
-
-      setPlayer(playerJson.Response.characters.data);
+      setFetchedPlayer(playerJson.Response.characters.data);
+      playerArray.push(player);
     };
     fetchItem();
     fetchPlayer();
