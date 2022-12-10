@@ -32,13 +32,13 @@ const App = () => {
       );
       const playerJson = await playerData.json();
       setFetchedPlayer(playerJson.Response.characters.data);
-      playerArray.push(player);
+      playerArray.push(fetchedPlayer);
     };
     fetchItem();
     fetchPlayer();
   }, []);
 
-  console.log(item, player);
+  console.log(item, fetchedPlayer);
 
   return (
     <div>
@@ -46,7 +46,7 @@ const App = () => {
       <img src={"https://www.bungie.net" + item.icon} />
       <p>
         Datto's hunter has been played for{" "}
-        {player["2305843009300406282"]?.minutesPlayedTotal} minutes
+        {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
       </p>{" "}
     </div>
   );
