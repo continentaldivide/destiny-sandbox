@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import './index.css'
 
 const App = () => {
   const apiKey = process.env.REACT_APP_DESTINY_API_KEY;
