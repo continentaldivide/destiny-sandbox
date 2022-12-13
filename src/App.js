@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import './index.css'
+import "./index.css";
 
 const App = () => {
   const apiKey = process.env.REACT_APP_DESTINY_API_KEY;
@@ -7,6 +7,11 @@ const App = () => {
   const playerArray = [];
   const [fetchedPlayer, setFetchedPlayer] = React.useState({});
   const myHeaders = new Headers();
+
+  const foo = "lunchtime";
+  const icon =
+    "https://www.bungie.net/common/destiny_content/icons/eb8377390504838c0190d8d56e70d28e.jpg";
+
   myHeaders.append("X-API-Key", apiKey);
 
   const requestOptions = {
@@ -49,8 +54,13 @@ const App = () => {
         Datto's hunter has been played for{" "}
         {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
       </p>{" "}
+      <Character foo={foo} />
     </div>
   );
+};
+
+const Character = ({ foo }) => {
+  return <div class="character">text + {foo}</div>;
 };
 
 export default App;
