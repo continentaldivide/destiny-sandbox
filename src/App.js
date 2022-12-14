@@ -8,10 +8,6 @@ const App = () => {
   const [fetchedPlayer, setFetchedPlayer] = React.useState({});
   const myHeaders = new Headers();
 
-  const foo = "lunchtime";
-  const icon =
-    "https://www.bungie.net/common/destiny_content/icons/eb8377390504838c0190d8d56e70d28e.jpg";
-
   myHeaders.append("X-API-Key", apiKey);
 
   const requestOptions = {
@@ -48,19 +44,31 @@ const App = () => {
 
   return (
     <div>
-      <p>hello world</p>
-      <img src={"https://www.bungie.net" + item.icon} />
-      <p>
-        Datto's hunter has been played for{" "}
-        {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
-      </p>{" "}
-      <Character foo={foo} />
+      <Main item={item} fetchedPlayer={fetchedPlayer} />
     </div>
   );
 };
 
-const Character = ({ foo }) => {
-  return <div class="character">text + {foo}</div>;
+const Main = ({ foo, item, fetchedPlayer }) => {
+  return (
+    <div id="main">
+      <Character item={item} fetchedPlayer={fetchedPlayer} />
+      <Character item={item} fetchedPlayer={fetchedPlayer} />
+      <Character item={item} fetchedPlayer={fetchedPlayer} />
+    </div>
+  );
+};
+
+const Character = ({ foo, item, fetchedPlayer }) => {
+  return (
+    <div class="character">
+      <p>
+        Datto's hunter has been played for{" "}
+        {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
+      </p>
+      <img src={"https://www.bungie.net" + item.icon} />
+    </div>
+  );
 };
 
 export default App;

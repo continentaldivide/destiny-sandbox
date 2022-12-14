@@ -11,22 +11,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  background-color: darkslateblue;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  background-color: #3e4354;
 }
 
 p {
   color: white;
 }
 
+#main {
+  background-color: #464b59;
+  display: flex;
+  gap: 50px;
+  margin: 30px;
+  min-width: 1600px;
+  border: solid red 1px;
+}
+
 .character {
-  background-color: pink;
+  background-color: #4e525f;
   display: flex;
   justify-content: center;
-  min-width: 400px;
-  margin: auto;
+  min-width: 500px;
+  max-width: 500px;
+  margin: 140px 0px;
+  border: solid pink 1px;
 }
