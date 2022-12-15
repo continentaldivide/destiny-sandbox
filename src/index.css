@@ -16,12 +16,13 @@ body {
 
 p {
   color: white;
+  margin: 0px;
 }
 
 #main {
   background-color: #464b59;
   display: flex;
-  gap: 50px;
+  justify-content: space-evenly;
   margin: 30px;
   min-width: 1600px;
   border: solid red 1px;
@@ -29,10 +30,15 @@ p {
 
 .character {
   background-color: #4e525f;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-auto-rows: 100px;
   min-width: 500px;
   max-width: 500px;
   margin: 140px 0px;
   border: solid pink 1px;
+}
+
+.equipped-item {
+  display: flex;
+  border: solid blue 1px;
 }
