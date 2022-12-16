@@ -74,6 +74,11 @@ const Character = ({ item, fetchedPlayer }) => {
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
     </div>
   );
 };
