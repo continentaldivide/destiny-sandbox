@@ -52,14 +52,14 @@ const App = () => {
 const Main = ({ item, fetchedPlayer }) => {
   return (
     <div id="main">
-      <Character item={item} fetchedPlayer={fetchedPlayer} />
+      <Character item={item} fetchedCharacter={fetchedPlayer.character} />
       <Character item={item} fetchedPlayer={fetchedPlayer} />
       <Character item={item} fetchedPlayer={fetchedPlayer} />
     </div>
   );
 };
 
-const Character = ({ item, fetchedPlayer }) => {
+const Character = ({ item, fetchedCharacter }) => {
   return (
     <div class="character">
       {/* <img src={"https://www.bungie.net" + item.icon} />
@@ -71,25 +71,25 @@ const Character = ({ item, fetchedPlayer }) => {
         Datto's hunter has been played for{" "}
         {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
       </p> */}
+      <EquippedItem item={item} fetchedCharacter={fetchedCharacter} />
+      {/* <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
-      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
-      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
-      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} /> */}
     </div>
   );
 };
 
-const EquippedItem = ({ item, fetchedPlayer }) => {
+const EquippedItem = ({ item, fetchedCharacter }) => {
   return (
     <div class="equipped-item">
       <img src={"https://www.bungie.net" + item.icon} />
       <p>
         Datto's hunter has been played for{" "}
-        {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
+        {fetchedCharacter.data.minutesPlayedTotal} minutes
       </p>
     </div>
   );
