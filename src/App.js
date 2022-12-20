@@ -42,6 +42,14 @@ const App = () => {
 
   console.log(item, fetchedPlayer);
 
+  if (fetchedPlayer["2305843009300406282"] == undefined) {
+    return (
+      <div id="loading-screen">
+        <h1>loading</h1>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Main item={item} fetchedPlayer={fetchedPlayer} />
@@ -71,7 +79,10 @@ const Character = ({ item, fetchedPlayer }) => {
         Datto's hunter has been played for{" "}
         {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
       </p> */}
-      <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
+      <EquippedItem2
+        item={item}
+        fetchedCharacter={fetchedPlayer["2305843009300406282"]}
+      />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
       <EquippedItem item={item} fetchedPlayer={fetchedPlayer} />
@@ -90,6 +101,18 @@ const EquippedItem = ({ item, fetchedPlayer }) => {
       <p>
         Datto's hunter has been played for{" "}
         {fetchedPlayer["2305843009300406282"]?.minutesPlayedTotal} minutes
+      </p>
+    </div>
+  );
+};
+
+const EquippedItem2 = ({ item, fetchedCharacter }) => {
+  return (
+    <div class="equipped-item">
+      <img src={"https://www.bungie.net" + item.icon} />
+      <p>
+        Datto's hunter has been played for {fetchedCharacter.minutesPlayedTotal}{" "}
+        minutes
       </p>
     </div>
   );

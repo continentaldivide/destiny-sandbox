@@ -19,6 +19,12 @@ p {
   margin: 0px;
 }
 
+#loading-screen h1 {
+  display: flex;
+  margin-top: 200px;
+  color: white;
+}
+
 #main {
   background-color: #464b59;
   display: flex;
@@ -34,7 +40,7 @@ p {
   grid-auto-rows: 100px;
   min-width: 500px;
   max-width: 500px;
-  margin: 140px 0px;
+  margin: 50px 0px;
   border: solid pink 1px;
 }
 
